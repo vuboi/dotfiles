@@ -51,6 +51,8 @@ source ~/.oh-my-posh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-posh/plugins/enhancd/init.sh
 source ~/.oh-my-posh/plugins/yarn/yarn.plugin.zsh
 source ~/.oh-my-posh/plugins/npm/npm.plugin.zsh
+source ~/.oh-my-posh/plugins/copypath/copypath.plugin.zsh
+source ~/.oh-my-posh/plugins/git-auto-fetch/git-auto-fetch.plugin.zsh
 # source ~/.oh-my-posh/plugins/git/git.plugin.zsh
 
 #Java
@@ -67,6 +69,9 @@ alias wad="warp-cli disconnect"
 alias war="warp-cli register"
 alias kp="npx kill-port"
 #Ubuntu
+alias h='history'
+alias hs='history | grep'
+alias hsi='history | grep -i'
 # Update the packages confirming with 'yes' to the prompt.
 alias update='sudo apt-get update -y'
 # Update the packages confirming with 'yes',
