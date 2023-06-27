@@ -405,10 +405,6 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+c",
-    "command": "turboConsoleLog.displayLogMessage"
-  },
-  {
     "key": "ctrl+alt+l",
     "command": "-turboConsoleLog.displayLogMessage"
   },
@@ -453,5 +449,13 @@
   {
     "key": "alt+i",
     "command": "workbench.action.navigateBackInEditLocations"
+  },
+  {
+    "key": "alt+c",
+    "command": "flash.log"
+  },
+  {
+    "key": "alt+c",
+    "command": "-extension.switchCSS"
   }
 ]
