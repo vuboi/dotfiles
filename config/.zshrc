@@ -94,6 +94,7 @@ alias count='echo && \
              echo -e "\033[0;31m$(find . -type f | wc -l)\033[1;37m files." && \
              echo -e "\033[0;34m$(find . -type d | wc -l)\033[1;37m directories." && \
              echo'
+alias remove='sudo apt-get purge --auto-remove'
 alias ll="ls -la"
 alias sai="sudo apt install"
 alias rm="rm -r"
