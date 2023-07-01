@@ -16,7 +16,9 @@ else
   mkdir ./tmp && cd ./tmp
 fi
 
-if [[ $ID_LIKE = "arch" ]]; then 
+if [[ $ID_LIKE = "arch" ]]; then
+  sudo pacman -Syy
+  sudo pacman -S --needed base-devel 
 #--Git--
   echo "============================== INSTALLING GIT =============================="
   yes | sudo pacman -S git &&
