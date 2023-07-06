@@ -214,7 +214,7 @@
     "command": "-workbench.action.findInFiles"
   },
   {
-    "key": "ctrl+shift+n",
+    "key": "ctrl+p",
     "command": "workbench.action.quickOpen"
   },
   {
@@ -222,7 +222,7 @@
     "command": "-workbench.action.quickOpen"
   },
   {
-    "key": "ctrl+p",
+    "key": "ctrl+shift+n",
     "command": "workbench.action.newWindow"
   },
   {
@@ -457,5 +457,17 @@
   {
     "key": "alt+c",
     "command": "-extension.switchCSS"
+  },
+  {
+    "key": "alt+e",
+    "command": "go-to-next-error.next.error"
+  },
+  {
+    "key": "alt+'",
+    "command": "workbench.action.navigateForwardInNavigationLocations"
+  },
+  {
+    "key": "alt+;",
+    "command": "workbench.action.navigateBackInNavigationLocations"
   }
 ]
