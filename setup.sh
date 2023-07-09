@@ -150,7 +150,7 @@ if [[ $ID_LIKE = "arch" ]]; then
   echo "PROCESSING: INSTALLING IBUS-BAMBOO DONE..."
 #--cloudflare--
   echo "============================== INSTALLING CLOUDFLARE =============================="
-  yes | yay -S cloudflare-warp-bin &&
+  yes | yay -S cloudflare--bin &&
   sudo systemctl enable --now warp-svc.service
   warp-cli register &&
   echo "PROCESSING: INSTALLING CLOUDFLARE DONE..."
@@ -163,7 +163,7 @@ if [[ $ID_LIKE = "arch" ]]; then
   echo "============================== INSTALLING HOMEBREW =============================="
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "PROCESSING: INSTALLING HOMEBREW DONE..."
-elif [[ $ID_LIKE = "ubuntu" ]]; then 
+elif [[ $ID = "ubuntu" ]]; then
 #--Git--
   echo "============================== INSTALLING GIT =============================="
   sudo apt install git --assume-yes
@@ -196,6 +196,8 @@ elif [[ $ID_LIKE = "ubuntu" ]]; then
 #--Install Font Like MacOS--
   sudo apt install fonts-inter --assume-yes
   sudo apt install gnome-tweaks --assume-yes
+  sudo apt-get install gnome-shell-extension-manager
+  sudo apt-get install chrome-gnome-shell --assume-yes
   sudo apt install font-manager --assume-yes
 #--Zsh--
   echo "============================== INSTALLING ZSH =============================="
@@ -255,7 +257,9 @@ elif [[ $ID_LIKE = "ubuntu" ]]; then
   env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
 #--cloudflare--
   echo "============================== INSTALLING CLOUDFLARE =============================="
-  sudo apt install cloudflare-warp -y
+  curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg &&
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list &&
+  sudo apt-get update && sudo apt-get install cloudflare-warp -y
   sudo systemctl enable --now warp-svc.service
   warp-cli register
 #--firefox--
@@ -268,7 +272,7 @@ elif [[ $ID_LIKE = "ubuntu" ]]; then
   sudo update-initramfs -u -k all
 #--open any terminal--
   echo "============================== OPEN ANY TERMINAL =============================="
-  sudo apt install python-nautilus -y
+  sudo apt install python3-nautilus python3-pip -y
   pip3 install --user nautilus-open-any-terminal &&
   gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal terminator
 #--Remove snap--
@@ -293,8 +297,10 @@ rm -rf ./tmp
 
 # Setting password show charactor *
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
-sudo cp -r ./sudoers /etc/
+#sudo cp -r ./sudoers /etc/
 sudo cp -r ./config/. ~
 
 # Remove charactor ibus
 ibus-setup
+# Disabled wayland
+sudo nano /etc/gdm3/custom.conf 
