@@ -14,32 +14,35 @@ export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 # Color terminal
 path+=($(ruby -e 'puts File.join(Gem.user_dir, "bin")'))
 # Config NVM
-# eval "$(fnm env --use-on-cd)"
 # Lazy loads NVM
-NVM_DIR="$HOME/.nvm"
-# Skip adding binaries if there is no node version installed yet
-if [ -d $NVM_DIR/versions/node ]; then
-  NODE_GLOBALS=(`find $NVM_DIR/versions/node -maxdepth 3 \( -type l -o -type f \) -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-fi
-NODE_GLOBALS+=("nvm")
-
-load_nvm () {
-  # Unset placeholder functions
-  for cmd in "${NODE_GLOBALS[@]}"; do unset -f ${cmd} &>/dev/null; done
-  # Load NVM
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-  # (Optional) Set the version of node to use from ~/.nvmrc if available
-  nvm use 2> /dev/null 1>&2 || true
-  # Do not reload nvm again
-  export NVM_LOADED=1
+lazynvm() {
+  unset -f nvm node npm npx
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+  if [ -f "$NVM_DIR/bash_completion" ]; then
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+  fi
 }
 
-for cmd in "${NODE_GLOBALS[@]}"; do
-  # Skip defining the function if the binary is already in the PATH
-  if ! which ${cmd} &>/dev/null; then
-    eval "${cmd}() { unset -f ${cmd} &>/dev/null; [ -z \${NVM_LOADED+x} ] && load_nvm; ${cmd} \$@; }"
-  fi
-done
+nvm() {
+  lazynvm 
+  nvm $@
+}
+ 
+node() {
+  lazynvm
+  node $@
+}
+ 
+npm() {
+  lazynvm
+  npm $@
+}
+
+npx() {
+  lazynvm
+  npx $@
+}
 
 # ============================== Plugin zsh && themes ==============================
 export PATH="$PATH:/usr/local/bin"
@@ -363,7 +366,7 @@ alias dashboard='./tools/scripts/npm.sh start test dashboard'
 alias css='./tools/scripts/code-standardization/atomic-css/atomic-css.sh'
 alias build='./tools/scripts/npm.sh build'
 alias start='./tools/scripts/npm.sh start'
-alias code='code-insiders'
+# alias code='code-insiders'
 # -1 is file not hidden, -1a is include hidden file, wc: count word, -l is line
 alias cf='ls -1 | wc -l'  
 alias cfh='ls -1a | wc -l'
@@ -399,6 +402,5 @@ mva() {
 }
 
 # fnm
-#export PATH="/home/shival/.local/share/fnm:$PATH"
-#eval "`fnm env`"
-
+export PATH="/home/shivalk/.local/share/fnm:$PATH"
+eval "`fnm env`"
