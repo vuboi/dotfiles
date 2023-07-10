@@ -12,8 +12,8 @@
   "editor.fontFamily": "Liga Ubuntu Mono, Ubuntu Mono Ligaturized, Cascadia Code, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontWeight": "550",
-  "editor.fontSize": 15,
-  "editor.lineHeight": 26,
+  "editor.fontSize": 16,
+  "editor.lineHeight": 27,
   "editor.cursorWidth": 3,
   "terminal.integrated.cursorWidth": 2,
   "workbench.startupEditor": "newUntitledFile",
@@ -43,7 +43,6 @@
   "settingsSync.ignoredExtensions": [
     "ms-vscode-remote.remote-wsl"
   ],
-  "files.autoSave": "onWindowChange",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.tabs.hideCondition": "never",
   "terminal.integrated.tabs.showActiveTerminal": "singleTerminal",
@@ -151,8 +150,6 @@
   "typescript.format.enable": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "javascript.format.semicolons": "insert",
-  "typescript.format.semicolons": "insert",
   "typescript.experimental.aiQuickFix": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
@@ -161,14 +158,20 @@
   "eslint.format.enable": true,
   "eslint.enable": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
-  "window.zoomLevel": 1,
+  // "javascript.format.semicolons": "insert",
+  // "typescript.format.semicolons": "insert",
   // ----------------< Custom Css Setting >------------------- //
   // "files.autoSaveDelay": 5000,
+  // "files.autoSave": "onWindowChange",
   "vscode_custom_css.imports": [
     // Macos, windows, linux
     // "file:///home/vuboi/.vscode/extensions/custome_css/active-tab-vscode.css",
     // "file:///C:/Users/boivn/.vscode/extensions/custome_css/gradient.css",
     "file:///home/vuboitmt/.vscode/extensions/custome_css/gradient.css",
   ],
+  "html-css-class-completion.includeGlobPattern": "**/*.{css,html,scss}",
+  "html-css-class-completion.enableEmmetSupport": true,
+  "window.zoomLevel": -0.5,
+  "terminal.integrated.env.linux": {},
   // ----------------< Custom Css Setting >------------------- //
 }
