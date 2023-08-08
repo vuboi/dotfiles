@@ -242,11 +242,11 @@ elif [[ $ID = "ubuntu" ]]; then
   echo "============================== INSTALLING XCLIP =============================="
   sudo apt install xclip -y
 #--filezilla--
-  echo "============================== INSTALLING FILEZILLA =============================="
-  sudo apt install filezilla -y
+#  echo "============================== INSTALLING FILEZILLA =============================="
+#  sudo apt install filezilla -y
 #--smartgit--
-  echo "============================== INSTALLING SMARTGIT =============================="
-  sudo apt install smartgit -y
+#  echo "============================== INSTALLING SMARTGIT =============================="
+#  sudo apt install smartgit -y
 #--ibus-bamboo--
   echo "============================== INSTALLING IBUS-BAMBOO =============================="
   sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo -y
@@ -256,12 +256,12 @@ elif [[ $ID = "ubuntu" ]]; then
 # Đặt ibus-bamboo làm bộ gõ mặc định
   env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
 #--cloudflare--
-  echo "============================== INSTALLING CLOUDFLARE =============================="
-  curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg &&
-  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list &&
-  sudo apt-get update && sudo apt-get install cloudflare-warp -y
-  sudo systemctl enable --now warp-svc.service
-  warp-cli register
+  #echo "============================== INSTALLING CLOUDFLARE =============================="
+  #curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg &&
+  #echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list &&
+  #sudo apt-get update && sudo apt-get install cloudflare-warp -y
+  #sudo systemctl enable --now warp-svc.service
+  #warp-cli register
 #--firefox--
   echo "============================== INSTALLING FIREFOX =============================="
   sudo apt install firefox -y
@@ -299,6 +299,9 @@ rm -rf ./tmp
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 #sudo cp -r ./sudoers /etc/
 sudo cp -r ./config/. ~
+cd ~
+sudo chown -R kyra:kyra .*
+sudo chmod -R 755 .*
 
 # Remove charactor ibus
 ibus-setup

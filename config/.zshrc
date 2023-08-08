@@ -401,6 +401,3 @@ mva() {
   fi
 }
 
-# fnm
-export PATH="/home/shivalk/.local/share/fnm:$PATH"
-eval "`fnm env`"
