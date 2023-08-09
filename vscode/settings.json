@@ -120,8 +120,20 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": [],
-        "settings": {}
+        "scope": [
+          "entity.name.function"
+        ],
+        "settings": {
+          "foreground": "#A2FF86"
+        }
+      },
+      {
+        "scope": [
+          "variable"
+        ],
+        "settings": {
+          // "foreground": "#D4ADFC",
+        }
       }
     ],
   },
@@ -129,7 +141,6 @@
   // Settings Convention Code Company 
   "html.format.wrapAttributes": "force",
   "html.format.wrapLineLength": 250,
-  "window.titleBarStyle": "custom",
   // ----------------< Setting Format >------------------- //
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
@@ -171,7 +182,9 @@
   ],
   "html-css-class-completion.includeGlobPattern": "**/*.{css,html,scss}",
   "html-css-class-completion.enableEmmetSupport": true,
-  "window.zoomLevel": -0.5,
   "terminal.integrated.env.linux": {},
+  "diffEditor.ignoreTrimWhitespace": false,
+  "window.autoDetectColorScheme": true,
+  "window.menuBarVisibility": "hidden",
   // ----------------< Custom Css Setting >------------------- //
 }
