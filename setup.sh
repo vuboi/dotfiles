@@ -212,6 +212,9 @@ elif [[ $ID = "ubuntu" ]]; then
 #--Terminator--
   echo "============================== INSTALLING TERMINATOR =============================="
   sudo apt install terminator --assume-yes
+#--Wallpaper
+  echo "============================== INSTALLING HYDRAPAPER ==============================" 
+  sudo apt install hydrapaper --assume-yes
 #--Imwheel--
   echo "============================== INSTALLING IMWHEEL =============================="
   sudo apt install imwheel --assume-yes
