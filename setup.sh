@@ -196,7 +196,7 @@ elif [[ $ID = "ubuntu" ]]; then
 #--Install Font Like MacOS--
   sudo apt install fonts-inter --assume-yes
   sudo apt install gnome-tweaks --assume-yes
-  sudo apt-get install gnome-shell-extension-manager
+  #sudo apt-get install gnome-shell-extension-manager
   sudo apt-get install chrome-gnome-shell --assume-yes
   sudo apt install font-manager --assume-yes
 #--Zsh--

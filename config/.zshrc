@@ -109,6 +109,8 @@ alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
 alias gcb="git branch --show-current | pbcopy"
 alias lg='lazygit'
+alias n='nautilus .'
+alias gte='gnome-text-editor'
 #Base ArchLinux
 alias clean='sudo du -sh ~/.cache/ && rm -rf ~/.cache/*'
 alias sps='sudo pacman -S'
@@ -401,3 +403,7 @@ mva() {
   fi
 }
 
+
+# fnm
+export PATH="/home/kyra/.local/share/fnm:$PATH"
+eval "`fnm env`"
