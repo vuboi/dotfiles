@@ -1100,7 +1100,8 @@
   -st-vfade-offset: 24px; }
 
 #dashtodockContainer.dashtodock #dash .dash-background {
-  background: #303030; }
+  background: rgba(0, 0, 0, 0.5);
+}
 
 #dashtodockContainer.dashtodock .progress-bar {
   /* Customization of the progress bar style, e.g.:
