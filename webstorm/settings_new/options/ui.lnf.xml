@@ -1,0 +1,11 @@
+<application>
+  <component name="KeyboardSettings">
+    <option name="enabled" value="true" />
+  </component>
+  <component name="UISettings">
+    <option name="FULL_PATHS_IN_TITLE_BAR" value="true" />
+    <option name="BORDERLESS_MODE" value="false" />
+    <option name="OVERRIDE_NONIDEA_LAF_FONTS" value="true" />
+    <option name="showTreeIndentGuides" value="true" />
+  </component>
+</application>
