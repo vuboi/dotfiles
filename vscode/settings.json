@@ -28,7 +28,9 @@
   ],
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": false,
+    "source.addMissingImports": true,
+    "source.organizeImports": true,
+    "source.fixAll": true,
     "source.fixAll.eslint": true
   },
   "typescript.suggest.paths": true,
@@ -186,5 +188,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "window.autoDetectColorScheme": true,
   "window.menuBarVisibility": "hidden",
+  "window.zoomLevel": 1,
+  "editor.multiCursorModifier": "ctrlCmd",
   // ----------------< Custom Css Setting >------------------- //
 }

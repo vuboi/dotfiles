@@ -523,4 +523,8 @@
     },
     "when": "editorTextFocus"
   },
+  {
+    "key": "alt+g",
+    "command": "editor.action.insertSnippet"
+  },
 ]
