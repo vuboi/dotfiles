@@ -507,5 +507,20 @@
   {
     "key": "shift+alt+e",
     "command": "extension.gotoRecentFiles"
-  }
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "alt+\\",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "cursorEnd",
+        "editor.action.jumpToBracket"
+      ]
+    },
+    "when": "editorTextFocus"
+  },
 ]
