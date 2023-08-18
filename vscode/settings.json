@@ -28,9 +28,8 @@
   ],
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": true,
-    "source.organizeImports": true,
-    "source.fixAll": true,
+    "source.addMissingImports": false,
+    "source.organizeImports": false,
     "source.fixAll.eslint": true
   },
   "typescript.suggest.paths": true,
@@ -42,9 +41,6 @@
     "other": "on"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "settingsSync.ignoredExtensions": [
-    "ms-vscode-remote.remote-wsl"
-  ],
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.tabs.hideCondition": "never",
   "terminal.integrated.tabs.showActiveTerminal": "singleTerminal",
@@ -76,7 +72,6 @@
   "[scss]": {
     "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
   },
-  "workbench.iconTheme": "material-icon-theme",
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
@@ -187,8 +182,12 @@
   "terminal.integrated.env.linux": {},
   "diffEditor.ignoreTrimWhitespace": false,
   "window.autoDetectColorScheme": true,
-  "window.menuBarVisibility": "hidden",
-  "window.zoomLevel": 1,
+  "window.menuBarVisibility": "visible",
   "editor.multiCursorModifier": "ctrlCmd",
+  "window.titleBarStyle": "custom",
+  "workbench.iconTheme": "vscode-simpler-icons",
+  "window.zoomLevel": -1,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   // ----------------< Custom Css Setting >------------------- //
 }

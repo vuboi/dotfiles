@@ -45,16 +45,8 @@
     "command": "-extension.switchTest"
   },
   {
-    "key": "alt+s",
-    "command": "extension.switchTypeScript"
-  },
-  {
     "key": "alt+t",
     "command": "-extension.switchTypeScript"
-  },
-  {
-    "key": "alt+a",
-    "command": "extension.switchHTML"
   },
   {
     "key": "alt+h",
@@ -230,10 +222,6 @@
     "command": "-workbench.action.newWindow"
   },
   {
-    "key": "alt+k alt+e",
-    "command": "extension.switchEffect"
-  },
-  {
     "key": "alt+e",
     "command": "-extension.switchEffect"
   },
@@ -271,9 +259,9 @@
   },
   {
     "key": "alt+b",
-    "command": "extension.multiCommand.execute",
+    "command": "runCommands",
     "args": {
-      "sequence": [
+      "commands": [
         "expandLineSelection",
         "editor.action.smartSelect.expand"
       ]
@@ -505,10 +493,6 @@
     "when": "canNavigateForward"
   },
   {
-    "key": "shift+alt+e",
-    "command": "extension.gotoRecentFiles"
-  },
-  {
     "key": "alt+h",
     "command": "workbench.action.focusActiveEditorGroup"
   },
@@ -526,5 +510,73 @@
   {
     "key": "alt+g",
     "command": "editor.action.insertSnippet"
+  },
+  // {
+  //   "key": "ctrl+s",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": [
+  //       "javascript.removeUnusedImports || workbench.action.files.save",
+  //       // "?javascript.removeUnusedImports",
+  //       // "?typescript.removeUnusedImports",
+  //       "workbench.action.files.save"
+  //     ]
+  //   },
+  //   "when": "editorTextFocus && !editorReadonly'"
+  //   // || editorTextFocus && !editorReadonly && editorLangId == 'javascript' || editorTextFocus && !editorReadonly && editorLangId == 'javascriptreact' || editorTextFocus && !editorReadonly && editorLangId == 'typescriptreact'
+  // },
+  // {
+  //   "key": "ctrl+s",
+  //   "command": "extension.multiCommand.execute",
+  //   "args": {
+  //     "sequence": [
+  //       "javascript.removeUnusedImports || editor.action.formatDocument",
+  //       "typescript.removeUnusedImports || editor.action.formatDocument",
+  //       "workbench.action.files.save",
+  //     ]
+  //   },
+  //   "when": "editorTextFocus && !editorReadonly || editorTextFocus && !editorReadonly && editorLangId == 'javascript' || editorTextFocus && !editorReadonly && editorLangId == 'javascriptreact' || editorTextFocus && !editorReadonly && editorLangId == 'typescriptreact'"
+  // },
+  {
+    "key": "shift+alt+s",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        {
+          "command": "editor.action.sourceAction",
+          "args": {
+            "kind": "source.addMissingImports",
+            "apply": "first"
+          }
+        },
+      ],
+    },
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "workbench.action.files.saveAll"
+  },
+  {
+    "key": "alt+a",
+    "command": "angular.goToComponentWithTemplateFile",
+  },
+  {
+    "key": "alt+s",
+    "command": "angular.goToTemplateForComponent",
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "extension.fuzzySearch",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "-extension.fuzzySearch",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "fuzzySearch.activeTextEditor"
   },
 ]
