@@ -41,18 +41,6 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "alt+s",
-    "command": "-extension.switchTest"
-  },
-  {
-    "key": "alt+t",
-    "command": "-extension.switchTypeScript"
-  },
-  {
-    "key": "alt+h",
-    "command": "-extension.switchHTML"
-  },
-  {
     "key": "shift+alt+home",
     "command": "editor.action.addCursorsToTop"
   },
@@ -202,28 +190,12 @@
     "command": "workbench.action.findInFiles"
   },
   {
-    "key": "ctrl+shift+f",
-    "command": "-workbench.action.findInFiles"
-  },
-  {
     "key": "ctrl+p",
     "command": "workbench.action.quickOpen"
   },
   {
-    "key": "ctrl+p",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
     "key": "ctrl+shift+n",
     "command": "workbench.action.newWindow"
-  },
-  {
-    "key": "ctrl+shift+n",
-    "command": "-workbench.action.newWindow"
-  },
-  {
-    "key": "alt+e",
-    "command": "-extension.switchEffect"
   },
   {
     "key": "ctrl+space",
@@ -231,18 +203,8 @@
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
   },
   {
-    "key": "ctrl+space",
-    "command": "-editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
     "key": "ctrl+shift+5",
     "command": "workbench.action.terminal.splitInstance",
-    "when": "terminalProcessSupported && terminalTabsFocus"
-  },
-  {
-    "key": "ctrl+shift+5",
-    "command": "-workbench.action.terminal.splitInstance",
     "when": "terminalProcessSupported && terminalTabsFocus"
   },
   {
@@ -497,48 +459,18 @@
     "command": "workbench.action.focusActiveEditorGroup"
   },
   {
-    "key": "alt+\\",
-    "command": "extension.multiCommand.execute",
+    "key": "shift+alt+s",
+    "command": "runCommands",
     "args": {
-      "sequence": [
-        "cursorEnd",
-        "editor.action.jumpToBracket"
+      "commands": [
+        "typescript.removeUnusedImports",
+        "workbench.action.files.save"
       ]
     },
-    "when": "editorTextFocus"
+    "when": "editorTextFocus && !editorReadonly && (editorLangId == typescript || editorLangId == javascript || editorLangId == javascriptreact)"
   },
   {
-    "key": "alt+g",
-    "command": "editor.action.insertSnippet"
-  },
-  // {
-  //   "key": "ctrl+s",
-  //   "command": "runCommands",
-  //   "args": {
-  //     "commands": [
-  //       "javascript.removeUnusedImports || workbench.action.files.save",
-  //       // "?javascript.removeUnusedImports",
-  //       // "?typescript.removeUnusedImports",
-  //       "workbench.action.files.save"
-  //     ]
-  //   },
-  //   "when": "editorTextFocus && !editorReadonly'"
-  //   // || editorTextFocus && !editorReadonly && editorLangId == 'javascript' || editorTextFocus && !editorReadonly && editorLangId == 'javascriptreact' || editorTextFocus && !editorReadonly && editorLangId == 'typescriptreact'
-  // },
-  // {
-  //   "key": "ctrl+s",
-  //   "command": "extension.multiCommand.execute",
-  //   "args": {
-  //     "sequence": [
-  //       "javascript.removeUnusedImports || editor.action.formatDocument",
-  //       "typescript.removeUnusedImports || editor.action.formatDocument",
-  //       "workbench.action.files.save",
-  //     ]
-  //   },
-  //   "when": "editorTextFocus && !editorReadonly || editorTextFocus && !editorReadonly && editorLangId == 'javascript' || editorTextFocus && !editorReadonly && editorLangId == 'javascriptreact' || editorTextFocus && !editorReadonly && editorLangId == 'typescriptreact'"
-  // },
-  {
-    "key": "shift+alt+s",
+    "key": "shift+alt+a",
     "command": "runCommands",
     "args": {
       "commands": [
@@ -554,7 +486,7 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+alt+a",
+    "key": "ctrl+alt+a",
     "command": "workbench.action.files.saveAll"
   },
   {
@@ -577,6 +509,71 @@
   },
   {
     "key": "shift+alt+k",
-    "command": "fuzzySearch.activeTextEditor"
+    "command": "fuzzySearch.activeTextEditor",
+    "when": "editorTextFocus"
   },
+  {
+    "key": "alt+\\",
+    "command": "editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+\\",
+    "command": "-editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+g",
+    "command": "workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.terminal.copySelection",
+    "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.terminal.copySelection",
+    "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+  },
+  {
+    "key": "alt+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && terminalHasBeenCreated"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+  },
+  {
+    "key": "alt+v",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch",
+        "editor.action.clipboardCopyAction",
+        "editor.action.insertLineAfter",
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "console.log(\"==> $CLIPBOARD: \", $CLIPBOARD);"
+          }
+        }
+      ],
+    },
+    "when": "editorTextFocus && !editorReadonly && (editorLangId == typescript || editorLangId == javascript)"
+  },
+  /*
+  {
+    "key": "ctrl+alt",
+    "descriptions": "Show hint function parameter,
+    "key": "ctrl+shift+a",
+    "description": "Command Palette",
+  }
+  */
 ]

@@ -2,7 +2,6 @@
   "editor.wordWrap": "on",
   "editor.renderWhitespace": "all",
   "explorer.confirmDragAndDrop": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.enablePreview": false,
   "terminal.integrated.fontFamily": "Liga Ubuntu Mono, Ubuntu Mono Ligaturized, MesloLGS NF, MesloLGM Nerd Font, Hack Nerd Font, Fira Code Retina, Cascadia Code, monospace",
   "terminal.integrated.defaultProfile.osx": "zsh",
@@ -34,19 +33,15 @@
   },
   "typescript.suggest.paths": true,
   "javascript.suggest.paths": true,
-  "editor.linkedEditing": true,
   "editor.quickSuggestions": {
     "comments": "on",
     "strings": "on",
     "other": "on"
   },
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.tabs.hideCondition": "never",
   "terminal.integrated.tabs.showActiveTerminal": "singleTerminal",
   "terminal.integrated.enableBell": false,
-  // ----------------< Start My Custom Seting >------------------- //
-  // ----------------< End My Custom Seting >------------------- //
   "terminal.integrated.tabs.enabled": true,
   "update.mode": "start",
   "security.workspace.trust.untrustedFiles": "open",
@@ -65,16 +60,9 @@
   "workbench.editor.historyBasedLanguageDetection": true,
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "editor.inlineSuggest.enabled": true,
-  "typescript.autoClosingTags": true,
   "search.quickOpen.includeSymbols": true,
   "search.searchEditor.reusePriorSearchConfiguration": true,
   "window.commandCenter": true,
-  "[scss]": {
-    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  },
   "terminal.integrated.defaultProfile.linux": "zsh",
   // ----------------< Start My Custom Seting >------------------- //
   "workbench.colorCustomizations": {
@@ -114,6 +102,7 @@
     "statusBar.noFolderBackground": "#212121",
     "statusBar.debuggingBackground": "#263238"
   },
+  // ----------------< Custom Css Setting >------------------- //
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -129,13 +118,14 @@
           "variable"
         ],
         "settings": {
-          // "foreground": "#D4ADFC",
+          "foreground": "#34b5ff",
         }
       }
     ],
   },
+  // ----------------< Custom Css Setting >------------------- //
   "terminal.integrated.gpuAcceleration": "on",
-  // Settings Convention Code Company 
+  // ----------------< Settings Convention Code Company >------------------- //
   "html.format.wrapAttributes": "force",
   "html.format.wrapLineLength": 250,
   // ----------------< Setting Format >------------------- //
@@ -155,6 +145,12 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
   "typescript.format.enable": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
@@ -166,28 +162,45 @@
   "eslint.format.enable": true,
   "eslint.enable": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
-  // "javascript.format.semicolons": "insert",
-  // "typescript.format.semicolons": "insert",
-  // ----------------< Custom Css Setting >------------------- //
-  // "files.autoSaveDelay": 5000,
-  // "files.autoSave": "onWindowChange",
-  "vscode_custom_css.imports": [
-    // Macos, windows, linux
-    // "file:///home/vuboi/.vscode/extensions/custome_css/active-tab-vscode.css",
-    // "file:///C:/Users/boivn/.vscode/extensions/custome_css/gradient.css",
-    "file:///home/vuboitmt/.vscode/extensions/custome_css/gradient.css",
-  ],
-  "html-css-class-completion.includeGlobPattern": "**/*.{css,html,scss}",
-  "html-css-class-completion.enableEmmetSupport": true,
   "terminal.integrated.env.linux": {},
   "diffEditor.ignoreTrimWhitespace": false,
   "window.autoDetectColorScheme": true,
   "window.menuBarVisibility": "visible",
   "editor.multiCursorModifier": "ctrlCmd",
   "window.titleBarStyle": "custom",
-  "workbench.iconTheme": "vscode-simpler-icons",
-  "window.zoomLevel": -1,
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  // ----------------< Custom Css Setting >------------------- //
+  "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+  "editor.linkedEditing": true,
+  "javascript.preferences.renameMatchingJsxTags": true,
+  "typescript.preferences.renameMatchingJsxTags": true,
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyTabStops": true,
+  "notebook.stickyScroll.enabled": true,
+  "workbench.iconTheme": "vscode-great-icons",
+  // ----------------< Setting hidden >-------------------
+  // "javascript.format.semicolons": "insert",
+  // "typescript.format.semicolons": "insert",
+  // "files.autoSaveDelay": 5000,
+  // "files.autoSave": "onWindowChange",
+  // "html-css-class-completion.includeGlobPattern": "**/*.{css,html,scss}",
+  // "html-css-class-completion.enableEmmetSupport": true,
+  "vscode_custom_css.imports": [
+    "file:///home/kyra/.vscode-insiders/vs-custom/gradient.css"
+    // Macos, windows, linux
+    // "file:///home/vuboi/.vscode/extensions/custome_css/active-tab-vscode.css",
+    // "file:///C:/Users/boivn/.vscode/extensions/custome_css/gradient.css",
+    // "file:///home/vuboitmt/.vscode/extensions/custome_css/gradient.css",
+  ],
 }
