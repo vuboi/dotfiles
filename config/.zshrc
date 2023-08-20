@@ -77,7 +77,7 @@ alias hsi='history | grep -i'
 alias copypath='pwd | tr -d "\n" | xclip -sel clip'
 # Update the packages confirming with 'yes' to the prompt.
 alias install='sudo apt-get install'
-alias install-d='sudo apt install ./'
+alias install-d='sudo apt install'
 alias reinstall='sudo apt-get install --reinstall'
 alias update='sudo apt-get update -y'
 # Update the packages confirming with 'yes',
