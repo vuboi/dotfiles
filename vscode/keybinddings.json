@@ -401,14 +401,6 @@
     "command": "workbench.action.navigateBackInEditLocations"
   },
   {
-    "key": "alt+c",
-    "command": "flash.log"
-  },
-  {
-    "key": "alt+c",
-    "command": "-extension.switchCSS"
-  },
-  {
     "key": "alt+e",
     "command": "go-to-next-error.next.error"
   },
@@ -551,7 +543,7 @@
     "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
   },
   {
-    "key": "alt+v",
+    "key": "alt+c",
     "command": "runCommands",
     "args": {
       "commands": [
