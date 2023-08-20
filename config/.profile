@@ -31,3 +31,7 @@ fi
 export PATH="$PATH:/home/shival/.local/share/JetBrains/Toolbox/scripts"
 export FREETYPE_PROPERTIES="cff:no-stem-darkening=0"
 
+
+#Force Themes Nautilus
+#export GTK_THEME=ark-arker
+#gsettings get org.gnome.desktop.interface gtk-theme

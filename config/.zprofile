@@ -14,3 +14,6 @@ fi
 # Added by Toolbox App
 export PATH="$PATH:/home/shival/.local/share/JetBrains/Toolbox/scripts"
 
+#Force Themes Nautilus
+#export GTK_THEME=ark-arker
+#gsettings get org.gnome.desktop.interface gtk-theme
