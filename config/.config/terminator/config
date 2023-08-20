@@ -16,6 +16,7 @@
     cursor_shape = underline
     font = Cascadia Mono PL Semi-Bold 12
     bold_is_bright = True
+    title_transmit_bg_color = "#1e1e2e"
 [layouts]
   [[default]]
     [[[window0]]]
