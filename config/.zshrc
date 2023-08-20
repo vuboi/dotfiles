@@ -25,15 +25,15 @@ lazynvm() {
 }
 
 nvm() {
-  lazynvm 
+  lazynvm
   nvm $@
 }
- 
+
 node() {
   lazynvm
   node $@
 }
- 
+
 npm() {
   lazynvm
   npm $@
@@ -76,6 +76,8 @@ alias hs='history | grep'
 alias hsi='history | grep -i'
 alias copypath='pwd | tr -d "\n" | xclip -sel clip'
 # Update the packages confirming with 'yes' to the prompt.
+alias install='sudo apt-get install'
+alias reinstall='sudo apt-get install --reinstall'
 alias update='sudo apt-get update -y'
 # Update the packages confirming with 'yes',
 # Upgrade the packages confirming with 'yes',
@@ -99,7 +101,6 @@ alias count='echo && \
              echo'
 alias remove='sudo apt-get purge --auto-remove'
 alias ll="ls -la"
-alias sai="sudo apt install"
 alias rm="rm -r"
 alias rmrf="rm -rf"
 alias rmd="rm -d"
@@ -121,7 +122,7 @@ alias spu='sudo pacman -Syu'
 alias spyu='sudo pacman -Syyu'
 alias spc='sudo pacman -Scc'
 alias spq='sudo pacman -Rns $(pacman -Qtdq)'
-# Git 
+# Git
 #alias ga='git add'
 alias gcos="git checkout staging",
 alias gcmr="git commit -m  'Merge && resolve conflict'"
@@ -173,11 +174,11 @@ alias gbr='git branch -r'
 #alias gstp='git stash pop'
 #alias gsts='git stash save'
 
-#Colorls 
+#Colorls
 alias ls='colorls'          #Colorls with no options
 alias lx='colorls -lX'      #List, sort by file type
 alias lS='colorls -lS'      #List, sort by size (largest first)
-alias ll2='colorls --tree=2' #Show tree heirarchy, capped at depth 
+alias ll2='colorls --tree=2' #Show tree heirarchy, capped at depth
 alias ll3='colorls --tree=3' #Show tree heirarchy, capped at depth
 alias ll4='colorls --tree=4' #Show tree heirarchy, capped at depth
 alias ll5='colorls --tree=5' #Show tree heirarchy, capped at depth
@@ -241,9 +242,9 @@ if [[ $VCS != "" ]]; then
   zstyle ':vcs_info:*' check-for-changes true
 fi
 
-case "$VCS" in 
+case "$VCS" in
    "git")
-    # git sepecific 
+    # git sepecific
     zstyle ':vcs_info:git*+set-message:*' hooks use_git_untracked
     zstyle ':vcs_info:git:*' stagedstr $vc_git_staged_status
     zstyle ':vcs_info:git:*' unstagedstr $vc_unstaged_status
@@ -251,13 +252,13 @@ case "$VCS" in
     zstyle ':vcs_info:git:*' formats " %c%u%m${char_badge} ${vc_branch_name}"
   ;;
 
-  # svn sepecific 
+  # svn sepecific
   "svn")
     zstyle ':vcs_info:svn:*' branchformat "%b"
     zstyle ':vcs_info:svn:*' formats " ${char_badge} ${vc_branch_name}"
   ;;
 
-  # hg sepecific 
+  # hg sepecific
   "hg")
     # echo "ставим hg переменные для vcs_info"
     zstyle ':vcs_info:hg:*' branchformat "%b"
@@ -290,19 +291,19 @@ setopt PROMPT_SUBST
 # Prepare git status line
 prepareGitStatusLine() {
   echo '${vcs_info_msg_0_}'
-} 
+}
 
 # Prepare prompt line limiter
 printPsOneLimiter() {
   local termwidth
   local spacing=""
-  
+
   ((termwidth = ${COLUMNS} - 1))
-  
+
   for i in {1..$termwidth}; do
     spacing="${spacing}${char_vertical_divider}"
   done
-  
+
   echo $ANSI_dim_black$char_down_and_right_divider$spacing$ANSI_reset
 }
 
@@ -313,7 +314,7 @@ PROMPT="%F{236}${char_up_and_right_divider} ${ssh_marker} %f%F{80}%~%f$(prepareG
 
 RPROMPT=""
 
-# ENV/HOOKS ==================================================================== 
+# ENV/HOOKS ====================================================================
 
 precmd() {
   if [[ $VCS != "" ]]; then
@@ -370,7 +371,7 @@ alias build='./tools/scripts/npm.sh build'
 alias start='./tools/scripts/npm.sh start'
 # alias code='code-insiders'
 # -1 is file not hidden, -1a is include hidden file, wc: count word, -l is line
-alias cf='ls -1 | wc -l'  
+alias cf='ls -1 | wc -l'
 alias cfh='ls -1a | wc -l'
 # $1 is source dir, $2 file name, ex: sample.txt or *.txt, $3 target dir
 # Copy all file (include subfolder) overwrite
@@ -381,7 +382,7 @@ cpa() {
   elif [ -z "$3" ]; then
     find $1 -type f -name "*" -exec cp -r {} $2 \;
     echo "Copy all file to $3 success!"
-  else 
+  else
     temp=${2//./}
     find $1 -type f -name "*.$3" -exec cp -r {} $2 \;
     echo "Copy all file $2 to $3 success!"
@@ -396,7 +397,7 @@ mva() {
   elif [ -z "$3" ]; then
     find $1 -type f -name "*" -exec mv -u {} $2 \;
     echo "Move all file $2 to $3 success!"
-  else 
+  else
     temp=${2//./}
     find $1 -type f -name "*.$3" -exec mv -u {} $2 \;
     echo "Move all file $2 to $3 success!"
