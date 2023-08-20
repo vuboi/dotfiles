@@ -1,0 +1,19 @@
+echo 1 > /sys/bus/pci/devices/<device_address>/remove
+sleep 1
+echo 1 > /sys/bus/pci/rescan
+
+sudo nano /lib/systemd/system-sleep/99_restart_sound
+
+
+#!/bin/sh
+  
+case "$1" in
+    post)
+        DEVICE_ID=`lspci -D |grep Audio|awk '{print $1}'`
+        echo 1 > /sys/bus/pci/devices/${DEVICE_ID}/remove
+        sleep 1
+        echo 1 > /sys/bus/pci/rescan
+esac
+
+
+sudo chmod +x /lib/systemd/system-sleep/99_restart_sound
