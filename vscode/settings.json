@@ -197,7 +197,7 @@
   // "html-css-class-completion.includeGlobPattern": "**/*.{css,html,scss}",
   // "html-css-class-completion.enableEmmetSupport": true,
   "vscode_custom_css.imports": [
-    "file:///home/kyra/.vscode-insiders/vs-custom/gradient.css"
+    "file:///home/kyra/Programs/vscode/gradient.css"
     // Macos, windows, linux
     // "file:///home/vuboi/.vscode/extensions/custome_css/active-tab-vscode.css",
     // "file:///C:/Users/boivn/.vscode/extensions/custome_css/gradient.css",
