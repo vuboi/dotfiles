@@ -310,4 +310,4 @@ sudo chmod -R 755 .*
 ibus-setup
 # Disabled wayland
 sudo nano /etc/gdm3/custom.conf 
-sudo visudo.png
+sudo visudo
