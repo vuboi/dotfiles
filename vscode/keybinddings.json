@@ -547,7 +547,6 @@
     "command": "runCommands",
     "args": {
       "commands": [
-        "editor.action.addSelectionToNextFindMatch",
         "editor.action.clipboardCopyAction",
         "editor.action.insertLineAfter",
         {
