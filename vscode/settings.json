@@ -206,11 +206,4 @@
   ],
   "editor.smartSelect.selectSubwords": false,
   "files.trimFinalNewlines": true,
-  "turboConsoleLog.logMessagePrefix": "==>",
-  "turboConsoleLog.insertEnclosingClass": false,
-  "turboConsoleLog.delimiterInsideMessage": "",
-  "turboConsoleLog.addSemicolonInTheEnd": true,
-  "turboConsoleLog.quote": "'",
-  "turboConsoleLog.insertEnclosingFunction": false,
-  "turboConsoleLog.includeFileNameAndLineNum": false,
 }

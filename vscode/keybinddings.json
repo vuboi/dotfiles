@@ -543,8 +543,12 @@
     "command": "-extension.toggleCounterpart"
   },
   {
-    "key": "alt+c",
-    "command": "turboConsoleLog.displayLogMessage"
+    "key": "ctrl+c m",
+    "command": "-extension.toggleCounterpartModule"
+  },
+  {
+    "key": "ctrl+c ctrl+c",
+    "command": "-extension.toggleCounterpartTesting"
   },
   /*
     {
