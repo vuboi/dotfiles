@@ -482,14 +482,6 @@
     "command": "workbench.action.files.saveAll"
   },
   {
-    "key": "alt+a",
-    "command": "angular.goToComponentWithTemplateFile",
-  },
-  {
-    "key": "alt+s",
-    "command": "angular.goToTemplateForComponent",
-  },
-  {
     "key": "shift+alt+l",
     "command": "extension.fuzzySearch",
     "when": "editorTextFocus"
@@ -543,28 +535,23 @@
     "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
   },
   {
+    "key": "alt+a",
+    "command": "extension.toggleCounterpart"
+  },
+  {
+    "key": "ctrl+c c",
+    "command": "-extension.toggleCounterpart"
+  },
+  {
     "key": "alt+c",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "editor.action.clipboardCopyAction",
-        "editor.action.insertLineAfter",
-        {
-          "command": "editor.action.insertSnippet",
-          "args": {
-            "snippet": "console.log(\"==> $CLIPBOARD: \", $CLIPBOARD);"
-          }
-        }
-      ],
-    },
-    "when": "editorTextFocus && !editorReadonly && (editorLangId == typescript || editorLangId == javascript)"
+    "command": "turboConsoleLog.displayLogMessage"
   },
   /*
-  {
-    "key": "ctrl+alt",
-    "descriptions": "Show hint function parameter,
-    "key": "ctrl+shift+a",
-    "description": "Command Palette",
-  }
-  */
+    {
+      "key": "ctrl+alt",
+      "descriptions": "Show hint function parameter,
+      "key": "ctrl+shift+a",
+      "description": "Command Palette",
+    }
+    */
 ]
