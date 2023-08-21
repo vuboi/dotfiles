@@ -478,7 +478,7 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+alt+a",
+    "key": "shift+alt+z",
     "command": "workbench.action.files.saveAll"
   },
   {
