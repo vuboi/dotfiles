@@ -1,0 +1,24 @@
+[user]
+	email = boivn@mobio.io
+	name = vuboi
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+#ament, credential, reset
+[core]
+	editor = code -n -w
+[credential]
+	helper = store
+[pull]
+  # Preserve the history of everybody and avoid origin merge commits
+  rebase = true
+[push]
+  # Push local branches to remote branches with the same name. New setting since 2.0
+  # default = simple
+  default = upstream
+  # When pushing, also push tags whose commit-ishs are now reachable upstream
+  followTags = true
+[rebase]
+  # Rebase with --

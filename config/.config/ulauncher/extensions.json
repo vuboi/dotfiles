@@ -1,0 +1,16 @@
+{
+    "com.github.lighttigerxiv.ulauncher-session-manager": {
+        "id": "com.github.lighttigerxiv.ulauncher-session-manager",
+        "url": "https://github.com/lighttigerXIV/ulauncher-session-manager",
+        "updated_at": "2023-08-20T17:53:41.243466",
+        "last_commit": "39218fddb79d86150c4624d96b1a162eba89c993",
+        "last_commit_time": "2023-05-23T08:14:57"
+    },
+    "com.github.friday.ulauncher-clipboard": {
+        "id": "com.github.friday.ulauncher-clipboard",
+        "url": "https://github.com/friday/ulauncher-clipboard",
+        "updated_at": "2023-08-20T17:53:43.528268",
+        "last_commit": "73420cf4816f925321db15379c9c981c8f28c6fe",
+        "last_commit_time": "2022-08-03T20:22:13"
+    }
+}

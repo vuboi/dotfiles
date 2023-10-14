@@ -1,0 +1,14 @@
+{
+  "html": {
+    "snippets": {
+      "tooltip": "<mo-libs-shared-components-tooltip></mo-libs-shared-components-tooltip>",
+      "label": "<mo-libs-shared-components-label></mo-libs-shared-components-label>"
+    }
+  },
+  "typescript": {
+    "snippets": {
+      "label": "MoLibsSharedComponentsLabelModule",
+      "tooltip": "MoLibsSharedComponentsTooltipModule"
+    }
+  }
+}
