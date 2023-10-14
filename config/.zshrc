@@ -432,7 +432,11 @@ zip_custom() {
     fi
 }
 
+git_push_stream() {
+  git push --set-upstream $remote $(git branch --show-current)
+}
 
+alias gpus='git_push_stream'
 alias unzipm='unzip_custom'
 alias zipm='zip_custom'
 alias 755='sudo chmod -R 755'
