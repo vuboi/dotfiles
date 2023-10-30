@@ -336,6 +336,7 @@ sudo chmod -R 755 .
 sh ./remove_emoji.sh
 sh ./postman.sh
 sh ./keybinding.sh
+sudo ./firefox.sh
 #sudo visudo
 sudo chsh -s $(which zsh)
 sudo apt-get remove --purge `dpkg --get-selections | grep i386 | awk '{print $1}'`
