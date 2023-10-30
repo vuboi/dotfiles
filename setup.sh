@@ -275,9 +275,12 @@ elif [[ $ID = "ubuntu" ]]; then
   #sudo apt-get update && sudo apt-get install cloudflare-warp -y
   #sudo systemctl enable --now warp-svc.service
   #warp-cli register
-#--firefox--
-  echo "============================== INSTALLING FIREFOX =============================="
-  sudo apt install firefox -y
+#--THORIUM BROWSER--
+  echo "============================== INSTALLING THORIUM =============================="
+  wget https://dl.thorium.rocks/debian/dists/stable/thorium.list
+  sudo mv thorium.list /etc/apt/sources.list.d/
+  sudo apt update
+  sudo apt install thorium-browser
 #--Setting fnkey keyboard--
   echo "============================== SETTING FNKEY KEYBOARD =============================="
   echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
