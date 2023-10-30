@@ -154,9 +154,10 @@ exec_script() {
 
 ### Execution in automatic mode.
 func_auto() {
-	echo -e "Would you like to run this script automatically? See the documentation to see what it will do."
-	echo -e "Type \e[33;1mY\e[m to continue or \e[33;1mN\e[m to interactive mode\n"
-	read -r choose
+	# echo -e "Would you like to run this script automatically? See the documentation to see what it will do."
+	# echo -e "Type \e[33;1mY\e[m to continue or \e[33;1mN\e[m to interactive mode\n"
+	# read -r choose
+	choose="Y"
 	case $choose in
 	y | Y)
 		if [[ $snap_exist = "firefox" ]]; then
@@ -180,10 +181,9 @@ func_auto() {
 }
 
 ### Check Ubuntu/Flavours 22.04, 22.10, 23.04, 23.10 and Debian Stable or Testing and start exec.
-if [ "$version_check" = "mantic" -o "$version_check" = "lunar" -o "$version_check" = "jammy" -o "$version_check" = "trixie" -o "$version_check" = "bookworm" -o "$version_check" = "bullseye" ]; then
-    # func_auto
-		func_install
+if [[ $version_check =~ ^(mantic|lunar|jammy|trixie|bookworm|bullseye)$ ]]; then
+	func_auto
 else
-    echo -e "\e[31;1mDistro not supported by this script.\e[m"
-    exit 1
+	echo -e "\e[31;1mDistro not supported by this script.\e[m"
+	exit 1
 fi
