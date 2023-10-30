@@ -196,61 +196,90 @@ elif [[ $ID = "ubuntu" ]]; then
   wget -O vscode.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
   sudo dpkg -i vscode.deb
 #--Visual Studio Code Insiders--
-  echo "============================== INSTALLING VISTUAL CODE INSIDERS =============================="
-  wget -O vscode-insiders.deb 'https://code.visualstudio.com/sha/download?build=insider&os=linux-deb-x64'
-  sudo dpkg -i vscode-insiders.deb
+  # echo "============================== INSTALLING VISTUAL CODE INSIDERS =============================="
+  # wget -O vscode-insiders.deb 'https://code.visualstudio.com/sha/download?build=insider&os=linux-deb-x64'
+  # sudo dpkg -i vscode-insiders.deb
 #--Skype--
   echo "============================== INSTALLING SKYPE =============================="
   wget https://go.skype.com/skypeforlinux-64.deb
   sudo dpkg -i skypeforlinux-64.deb
 #--Install Font Like MacOS--
-  sudo apt install fonts-inter --assume-yes
+  # sudo apt install fonts-inter --assume-yes
   sudo apt install gnome-tweaks --assume-yes
   #sudo apt-get install gnome-shell-extension-manager
   sudo apt-get install chrome-gnome-shell --assume-yes
   sudo apt install font-manager --assume-yes
-#--Zsh--
-  echo "============================== INSTALLING ZSH =============================="
-  sudo apt install zsh --assume-yes
-  chsh -s $(which zsh)
+#--Install Some App Company--
+#!/bin/bash
+echo "============================== INSTALLING SMARTGIT =============================="
+# sudo add-apt-repository ppa:eugenesan/ppa -y
+# sudo apt-get update -y
+# sudo apt-get install smartgit -y
+#wget https://www.syntevo.com/downloads/smartgit/smartgit-22_1_7.deb
+sudo apt install ./smartgit-22_1_7.deb -y
+#rm -rf ./smartgit-22_1_7.deb
+
+echo "============================== SET KEYBINDDING =============================="
+sh ./keybinding.sh
+echo "============================== POSTMAN =============================="
+sh ./postman.sh
+echo "============================== FIREFORE =============================="
+sh ./firefox.sh
+echo "============================== REMOVE SNAP =============================="
+sh ./remove-snap.sh
+echo "============================== CLOUD FLARE =============================="
+sh ./cloudflare.sh
+echo "============================== VISUDO =============================="
+sh ./visudo.sh
+echo "============================== WAYLAND OFF =============================="
+sh ./waylandoff.sh
+echo "============================== SOUND SLEEP =============================="
+sudo sh ./sound-sleep.sh
+echo "============================== REMOVE EMOJI =============================="
+sh ./remove_emoji.sh
+echo "============================== COPY NEW SETTING VSCODE =============================="
+sh ./vscode.sh
 #--Neofetch--
-  echo "============================== INSTALLING NEOFETCH =============================="
-  sudo apt install neofetch --assume-yes
+  # echo "============================== INSTALLING NEOFETCH =============================="
+  # sudo apt install neofetch --assume-yes
 #--Bashtop--
-  echo "============================== INSTALLING BASHTOP =============================="
-  sudo apt install bashtop --assume-yes
+  # echo "============================== INSTALLING BASHTOP =============================="
+  # sudo apt install bashtop --assume-yes
 #--Terminator--
-  echo "============================== INSTALLING TERMINATOR =============================="
-  sudo apt install terminator --assume-yes
+  # echo "============================== INSTALLING TERMINATOR =============================="
+  # sudo apt install terminator --assume-yes
 #--Wallpaper
-  echo "============================== INSTALLING HYDRAPAPER =============================="
-  sudo apt install hydrapaper --assume-yes
+  # echo "============================== INSTALLING HYDRAPAPER =============================="
+  # sudo apt install hydrapaper --assume-yes
 #--Imwheel--
   echo "============================== INSTALLING IMWHEEL =============================="
   sudo apt install imwheel --assume-yes
 #--Ulauncher--
-  echo "============================== INSTALLING ULAUNCHER =============================="
-  sudo add-apt-repository ppa:agornostal/ulauncher -y &&
-  sudo apt update &&
-  sudo apt install ulauncher -y
+  # echo "============================== INSTALLING ULAUNCHER =============================="
+  # sudo add-apt-repository ppa:agornostal/ulauncher -y &&
+  # sudo apt update &&
+  # sudo apt install ulauncher -y
 #--LibreoOffice--
   echo "============================== INSTALLING LIBREOFFICE =============================="
   sudo apt install libreoffice -y
 #--Zip--
   echo "============================== INSTALLING ZIP =============================="
   sudo apt install zip -y
+#--Filezilla--
+  echo "============================== INSTALLING FILEZILLA =============================="
+  sudo apt install filezilla -y
 #--Unzip--
   echo "============================== INSTALLING UNZIP =============================="
   sudo apt install unzip -y
 #--Fnm--
-  echo "============================== INSTALLING FNM =============================="
-  curl -fsSL https://fnm.vercel.app/install | bash
+  # echo "============================== INSTALLING FNM =============================="
+  # curl -fsSL https://fnm.vercel.app/install | bash
 #--Nvm--
   echo "============================== INSTALLING NVM =============================="
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 #--Kazam--
-  echo "============================== INSTALLING KAZAM =============================="
-  sudo apt install kazam -y
+  # echo "============================== INSTALLING KAZAM =============================="
+  # sudo apt install kazam -y
 #--xclip--
   echo "============================== INSTALLING XCLIP =============================="
   sudo apt install xclip -y
@@ -276,18 +305,18 @@ elif [[ $ID = "ubuntu" ]]; then
   #sudo systemctl enable --now warp-svc.service
   #warp-cli register
 #--firefox--
-  echo "============================== INSTALLING FIREFOX =============================="
-  sudo apt install firefox -y
+  # echo "============================== INSTALLING FIREFOX =============================="
+  # sudo apt install firefox -y
 #--Setting fnkey keyboard--
   echo "============================== SETTING FNKEY KEYBOARD =============================="
   echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
   echo options hid_apple fnmode=0 | sudo tee -a /etc/modprobe.d/hid_apple.conf
   sudo update-initramfs -u -k all
 #--open any terminal--
-  echo "============================== OPEN ANY TERMINAL =============================="
-  sudo apt install python3-nautilus python3-pip -y
-  pip3 install --user nautilus-open-any-terminal &&
-  gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal terminator
+  # echo "============================== OPEN ANY TERMINAL =============================="
+  # sudo apt install python3-nautilus python3-pip -y
+  # pip3 install --user nautilus-open-any-terminal &&
+  # gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal terminator
 #--add some app other--
 sudo add-apt-repository ppa:rvm/smplayer -y
 sudo apt-get update
@@ -306,9 +335,13 @@ sudo apt install flameshot -y
   sudo apt-mark hold snapd
   sudo apt-mark hold gnome-software-plugin-snap
 #--HomeBrew--
-  echo "============================== INSTALLING HOMEBREW =============================="
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo "PROCESSING: INSTALLING HOMEBREW DONE..."
+  # echo "============================== INSTALLING HOMEBREW =============================="
+  # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # echo "PROCESSING: INSTALLING HOMEBREW DONE..."
+#--Zsh--
+  echo "============================== INSTALLING ZSH =============================="
+  sudo apt install zsh --assume-yes
+  sudo chsh -s $(which zsh)
 fi
 cd ..
 rm -rf ./tmp
@@ -316,25 +349,26 @@ rm -rf ./tmp
 # Setting password show charactor *
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 #sudo cp -r ./sudoers /etc/
-echo "Copy extension gnome-shell"
-sudo cp -r ./extensions/extensions ~/.local/share/gnome-shell/
-echo "Copy wallpaper to Pictures"
-sudo cp -r ./Wallpapers ~/Pictures/
+# echo "Copy extension gnome-shell"
+# sudo cp -r ./extensions/extensions ~/.local/share/gnome-shell/
+# echo "Copy wallpaper to Pictures"
+# sudo cp -r ./Wallpapers ~/Pictures/
 echo "Copy config"
 sudo cp -r ./config/. ~
-echo "Remove gnome-shell.css"
-sudo rm -rf /usr/share/themes/Yaru-purple-dark/gnome-shell/gnome-shell.css
-echo "Copy gnome-shell.css"
-sudo cp -r ./gnome-shell/Yaru-purple-dark/gnome-shell.css /usr/share/themes/Yaru-purple-dark/gnome-shell
+# echo "Remove gnome-shell.css"
+# sudo rm -rf /usr/share/themes/Yaru-purple-dark/gnome-shell/gnome-shell.css
+# echo "Copy gnome-shell.css"
+# sudo cp -r ./gnome-shell/Yaru-purple-dark/gnome-shell.css /usr/share/themes/Yaru-purple-dark/gnome-shell
 
 cd ~
 sudo chown -R $USER:$USER .
 sudo chmod -R 755 .
 
 # Remove charactor ibus
-ibus-setup
+# ibus-setup
 #sudo visudo
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
+sudo apt-get remove --purge `dpkg --get-selections | grep i386 | awk '{print $1}'`
 sudo dpkg --remove-architecture i386
 # Fix Trust key
 cd /etc/apt

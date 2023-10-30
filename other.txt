@@ -1,5 +1,0 @@
-https://www.omgubuntu.co.uk/2022/09/make-gnome-console-default-terminal-in-ubuntu
-https://www.omgubuntu.co.uk/2020/07/open-folder-in-terminal-ubuntu-plugin
-https://www.addictivetips.com/ubuntu-linux-tips/open-terminal-nautilus/
-https://github.com/ToxicFrog/Ligaturizer/releases/tag/v5
-https://github.com/Stunkymonkey/nautilus-open-any-terminal
