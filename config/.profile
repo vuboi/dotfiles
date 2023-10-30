@@ -15,27 +15,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-
-
-# Added by Toolbox App
-export PATH="$PATH:/home/shival/.local/share/JetBrains/Toolbox/scripts"
-export FREETYPE_PROPERTIES="cff:no-stem-darkening=0"
-
-
-
-# Added by Toolbox App
-export PATH="$PATH:/home/kyra/.local/share/JetBrains/Toolbox/scripts"
-
 
 #Force Themes Nautilus
 #export GTK_THEME=ark-arker

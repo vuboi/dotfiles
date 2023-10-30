@@ -1,0 +1,42 @@
+{
+  "editor.wordWrap": "on",
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.fontFamily": "Ubuntu Mono, monospace",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.fontWeight": "bold",
+  "editor.fontFamily": "Ubuntu Mono, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "560",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 23,
+  "editor.cursorWidth": 3,
+  "editor.suggestSelection": "first",
+  "terminal.integrated.cursorWidth": 2,
+  "workbench.startupEditor": "newUntitledFile",
+  "html.format.wrapAttributes": "force",
+  "html.format.wrapLineLength": 250,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": false,
+    "source.organizeImports": false,
+    "source.fixAll.eslint": true
+  },
+  "typescript.suggest.paths": true,
+  "javascript.suggest.paths": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "window.titleBarStyle": "custom",
+  "workbench.editor.enablePreview": false
+}

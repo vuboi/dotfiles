@@ -64,7 +64,7 @@ if [[ $ID_LIKE = "arch" ]]; then
 #--Zsh--
   echo "============================== INSTALLING ZSH =============================="
   yes | sudo pacman -S zsh &&
-  chsh -s $(which zsh) &&
+  sudo chsh -s $(which zsh) &&
   echo "PROCESSING: INSTALLING ZSH DONE..."
 #--Skype--
   echo "============================== INSTALLING SKYPE =============================="
@@ -212,7 +212,7 @@ elif [[ $ID = "ubuntu" ]]; then
 #--Zsh--
   echo "============================== INSTALLING ZSH =============================="
   sudo apt install zsh --assume-yes
-  chsh -s $(which zsh)
+  sudo chsh -s $(which zsh)
 #--Neofetch--
   echo "============================== INSTALLING NEOFETCH =============================="
   sudo apt install neofetch --assume-yes
@@ -316,8 +316,8 @@ rm -rf ./tmp
 # Setting password show charactor *
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 #sudo cp -r ./sudoers /etc/
-echo "Copy extension gnome-shell"
-sudo cp -r ./extensions/extensions ~/.local/share/gnome-shell/
+# echo "Copy extension gnome-shell"
+# sudo cp -r ./extensions/extensions ~/.local/share/gnome-shell/
 echo "Copy wallpaper to Pictures"
 sudo cp -r ./Wallpapers ~/Pictures/
 echo "Copy config"
@@ -332,9 +332,13 @@ sudo chown -R $USER:$USER .
 sudo chmod -R 755 .
 
 # Remove charactor ibus
-ibus-setup
+#ibus-setup
+sh ./remove_emoji.sh
+sh ./postman.sh
+sh ./keybinding.sh
 #sudo visudo
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
+sudo apt-get remove --purge `dpkg --get-selections | grep i386 | awk '{print $1}'`
 sudo dpkg --remove-architecture i386
 # Fix Trust key
 cd /etc/apt
